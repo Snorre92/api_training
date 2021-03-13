@@ -41,18 +41,11 @@ class HelloController {
                 return ResponseEntity.status(201).body(body);
             }
         }
-        //String userEmail = (String) json.get("userEmail");
-        //String userName = (String)  json.get("userName");
-        //String userTweeter = (String) json.get("userTweeter");
-        //String userCountry = (String) json.get("userCountry");
-        //String userSex = (String) json.get("userSex");
-        //String userSexPref = (String) json.get("userSexPref");
-        //return ResponseEntity
-        return ResponseEntity.status(404).body("My bad master Darth Vader");
+        return ResponseEntity.status(404).body("Error");
     }
 
     @GetMapping(path = "/api/matches", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<Object>matche(@RequestParam(name = "userName") String userName, @RequestParam(name = "userCountry") String userCountry) {
+    ResponseEntity<Object>match(@RequestParam(name = "userName") String userName, @RequestParam(name = "userCountry") String userCountry) {
         final List<Map<String, String>> profiles = List.of(
             Map.of("name", "machin","twitter","machin45"),
             Map.of("name","Charf-Eddin Belhadj", "twitter", "Zboubosor Fin Stratège du Cul"),
