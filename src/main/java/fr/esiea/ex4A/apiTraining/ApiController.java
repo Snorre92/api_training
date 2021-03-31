@@ -44,10 +44,7 @@ public class ApiController {
         String sexPref = repositoryService.getUser(userName).getUserSexPref();
         System.out.println(sexPref);
         List<User> usermatches = repositoryService.getAll().stream()
-            .filter(x -> !x.getUserName().equals(userName) &&
-                x.getUserSex().equals(sexPref) &&
-                x.getUserage() >= age - 4 &&
-                x.getUserage() <= age + 4)
+            .filter(x -> !x.getUserName().equals(userName) && x.getUserSex().equals(sexPref) && x.getUserage() >= age - 4 && x.getUserage() <= age + 4)
             .collect(Collectors.toList());
         List<Matches> listMatches = new ArrayList<>();
         System.out.println(usermatches.toString());
