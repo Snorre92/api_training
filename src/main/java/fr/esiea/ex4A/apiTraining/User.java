@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Optional;
 
-
 public class User {
     private final String userMail;
     private final String userName;
@@ -41,7 +40,6 @@ public class User {
         this.userSexPref = user.userSexPref;
         this.age = Optional.of(age);
     }
-
     public String getUserMail() {
         return userMail;
     }
@@ -67,17 +65,4 @@ public class User {
     }
 
     public Integer getUserage(){return age.get();}
-
-    @Override
-    public String toString() {
-        return "User{" +
-            "userMail='" + userMail + '\'' +
-            ", userName='" + userName + '\'' +
-            ", userTweeter='" + userTweeter + '\'' +
-            ", userCountry='" + userCountry + '\'' +
-            ", userSex='" + userSex + '\'' +
-            ", userSexPref='" + userSexPref + '\'' +
-            ", age=" + age +
-            '}';
-    }
 }
